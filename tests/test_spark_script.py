@@ -12,4 +12,4 @@ def test_perform_function():
 
     rdd = sc.parallelize([1, 2, 3])
 
-    assert perform_function(rdd) == rdd
+    assert perform_function(rdd).collect() == rdd.collect()

@@ -4,7 +4,8 @@ from pyspark import SparkConf, SparkContext
 def perform_function(rdd):
     """Performs the core function of this script
 
-    This is de dummy core function of the pyspark script that we want to maintain.
+    This is de dummy core function of the pyspark script that
+    we want to maintain.
     :param rdd: the rdd to transform
     :return: rdd
     """
@@ -15,7 +16,6 @@ def perform_function(rdd):
 
 if __name__ == '__main__':
     """Main Spark script
-    
     This is the actual code of the pyspark-template project."""
     conf = SparkConf().setAppName('spark_script')
     sc = SparkContext(conf=conf)

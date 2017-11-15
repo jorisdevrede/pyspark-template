@@ -1,6 +1,6 @@
 API Docs
 ========
 
-.. automodule:: wordcount
+.. automodule:: spark_script
    :members:
    :undoc-members:
