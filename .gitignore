@@ -3,5 +3,5 @@
 dist/
 build/
 .idea/
-pyspark_template.egg-info
+*.egg-info/
 .tox/

@@ -2,7 +2,7 @@
 
 
 Example PySpark project with standard configuration for:
-- code style [flake8, PyCharm]
+- code style and analysis [flake8, pylint, PyCharm]
 - static vulnerability analysis [bandit]
 - unit tests [py.test]
 - test coverage [coverage]
