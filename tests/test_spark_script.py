@@ -1,15 +1,11 @@
-# import required 3rd party packages to perform the tests
-from pyspark import SparkConf, SparkContext
-
 # import the function(s) to be tested
 from spark_script import perform_function
 
-
-def test_perform_function():
+# this test uses the pytest fixture 'spark' from conftest.py
+def test_perform_function(spark):
     """Tests output of the core function"""
-    conf = SparkConf()
-    sc = SparkContext(conf=conf)
 
-    rdd = sc.parallelize([1, 2, 3])
+    rdd = spark.sparkContext.parallelize([1, 2, 3])
 
+    # testing the 'perform_function()' function from spark_script.py
     assert perform_function(rdd).collect() == rdd.collect()
