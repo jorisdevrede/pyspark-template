@@ -1,6 +1,7 @@
 # import the function(s) to be tested
 from spark_script import perform_function
 
+
 # this test uses the pytest fixture 'spark' from conftest.py
 def test_perform_function(spark):
     """Tests output of the core function"""
