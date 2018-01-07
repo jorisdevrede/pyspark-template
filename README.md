@@ -4,7 +4,7 @@
 Example PySpark project with standard configuration for:
 - code style and analysis [flake8, pylint, PyCharm]
 - static vulnerability analysis [bandit]
-- unit tests [py.test]
+- unit tests [unittest]
 - test coverage [coverage]
 - documentation [sphinx]
 
@@ -17,7 +17,7 @@ Example PySpark project with standard configuration for:
 ## Usage
 You can either copy the files in this template and rename as needed, or use it as an example to create your own files.
 1. In your project add your own 'pyspark_script.py'.
-2. Add pytests in a `tests/` directory
+2. Add unittests in a `tests/` directory
 3. Add a `setup.py`
 4. Run `Tools;Sphinx Quickstart`
 5. Add a `tox.ini`
