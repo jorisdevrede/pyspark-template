@@ -1,12 +1,28 @@
 # import the function(s) to be tested
 from spark_script import perform_function
+from pyspark.sql import SparkSession
+
+import unittest
 
 
-# this test uses the pytest fixture 'spark' from conftest.py
-def test_perform_function(spark):
-    """Tests output of the core function"""
+class TestSparkScript(unittest.TestCase):
 
-    rdd = spark.sparkContext.parallelize([1, 2, 3])
+    @classmethod
+    def setUpClass(cls):
+        # setup spark once for all tests
+        cls._spark = SparkSession.builder.appName('unittest').getOrCreate()
 
-    # testing the 'perform_function()' function from spark_script.py
-    assert perform_function(rdd).collect() == rdd.collect()
+    def test_perform_function(self):
+        rdd = self._spark.sparkContext.parallelize([1, 2, 3])
+
+        # testing the 'perform_function()' function from spark_script.py
+        self.assertEqual(perform_function(rdd).collect(), rdd.collect())
+
+    @classmethod
+    def tearDownClass(cls):
+        # stop spark after all tests
+        cls._spark.stop()
+
+
+if __name__ == '__main__':
+    unittest.main()
